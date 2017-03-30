@@ -24,5 +24,6 @@ Included is a traditional init script and monit config (optional), to use the in
 # Ingesting ELB logs
 See here:  https://github.com/vigeek/aws-elb-logs-to-logstash
 
-# Example dashboard (included), view readme in kibana-dashboard directory
+# Example dashboard (included)
+To install, please view readme in kibana-dashboard directory
 ![alt tag](https://github.com/vigeek/aws-cloudtrail-to-logstash/blob/master/kibana-dashboard/dashboard-partial-ss.png)
