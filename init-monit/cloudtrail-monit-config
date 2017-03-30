@@ -1,0 +1,5 @@
+# Basic monit configuratino file
+check process cloudtrail-consumer
+  with pidfile  /var/run/cloudtrail-consumer.pid
+  start program "/etc/init.d/cloudtrail-consumer-init.sh start"
+  stop program "/etc/init.d/cloudtrail-consumer-init.sh stop"
