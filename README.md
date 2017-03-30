@@ -2,8 +2,7 @@
 Pulls down cloudtrail logs and outputs to a json file to be ingested by LogStash.
 
 # Requires
-s3cmd
-jq
+s3cmd -and- jq
 
 # Configuration
 
