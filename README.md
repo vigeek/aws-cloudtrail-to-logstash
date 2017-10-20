@@ -1,5 +1,5 @@
 # aws-cloudtrail-to-logstash
-Pulls down cloudtrail logs and outputs to a json file to be ingested by LogStash.
+Pulls down AWS cloudtrail logs from S3 and outputs to a json file to be ingested by LogStash.  The json logs are preformatted and easily parsable by Logstash.
 
 # Requires
 s3cmd -and- jq
