@@ -27,3 +27,5 @@ See here:  https://github.com/vigeek/aws-elb-logs-to-logstash
 # Example dashboard (included)
 To install, please view readme in kibana-dashboard directory
 ![alt tag](https://github.com/vigeek/aws-cloudtrail-to-logstash/blob/master/kibana-dashboard/dashboard-partial-ss.png)
+
+*Some minor details from the dashboard image are obfuscated.*
