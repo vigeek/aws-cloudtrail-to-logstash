@@ -2,6 +2,9 @@
 # Russ Thompson 2016.
 # Requires: s3cmd
 
+# Check interval, how often to pause in between checks
+CHECK_INTERVAL="30"
+
 # Define temporary file, temporary results are stored here to avoid duplicates.
 TEMP_FILE="/tmp/cloudtrail-tmp"
 
@@ -13,7 +16,7 @@ S3_BUCKET_NAME="your-cloudtrail-bucket"
 # Define the numerical number that resepresents your AWS account.
 AWS_ACCOUNT_NUMBER=""
 
-# Check growth of file. 
+# Check growth of file, this is a small list of already processed files.
 # Rather than rotate, just keep them relatively small.
 function check_file_growth {
   if [ "$(wc -l $TEMP_FILE | awk '{print $1}')" -gt "200" ] ; then
@@ -36,7 +39,6 @@ function reset_date {
 
 reset_date
 
-
 # Loop through all the regions, consume files and output to json.
 while true ; do
   for THE_PATH in `s3cmd ls s3://$S3_BUCKET_NAME/AWSLogs/$AWS_ACCOUNT_NUMBER/CloudTrail/ | awk '{print $2}'` ; do
@@ -55,5 +57,5 @@ while true ; do
   done
   check_file_growth
   reset_date
-  sleep 20
+  sleep $CHECK_INTERVAL
 done
